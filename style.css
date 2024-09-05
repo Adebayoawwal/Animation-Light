@@ -1,0 +1,52 @@
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-image: linear-gradient(#160527,#160527, #c3b8ce);
+    color: #eee5;
+    background-size: cover;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    height: 100px; 
+}
+header ul{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+@property --rotate{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.light{
+    background-image: conic-gradient(
+        from var(--rotate) at 29% 10%,
+        #0B1012 40%,
+        #f4f7fcc9,
+        #0B1012 60%
+    );
+    font-size: 120px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: 3s rotateLight infinite ease-in-out alternate;
+}
+@keyframes rotateLight{
+    from{
+      --rotate: 0.15turn;
+    }to{
+        --rotate: -0.15turn;
+    }
+}
